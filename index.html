@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Barcode Scanner</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 20px;
+        }
+        video {
+            width: 100%; 
+            max-width: 400px; 
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        canvas { 
+            display: none; 
+        }
+        #scanButton, #typeButton {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+        #scanButton:hover, #typeButton:hover {
+            background-color: #45a049;
+        }
+        #results {
+            margin-top: 20px;
+            max-width: 500px;
+            text-align: center;
+            line-height: 1.6;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #barcodeInput {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            #scanButton, #typeButton, #barcodeInput { width: 100%; }
+            #results { max-width: 100%; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Barcode Scanner and Recyclability Checker</h1>
+    <video id="video" autoplay></video>
+    <button id="scanButton">Scan Barcode</button>
+    <input type="text" id="barcodeInput" placeholder="Enter barcode manually" />
+    <button id="typeButton">Check Barcode</button>
+    <canvas id="canvas"></canvas>
+
+    <div id="results"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
